@@ -1,13 +1,25 @@
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
-  name: "John",
-  age: 30,
-  hobbies: ["Sports", "Cooking"],
-  role: [2, "author"],
-};
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultType: string
+) {
+  let result;
+  if (
+    (typeof input1 === "number" && typeof input2 === "number") ||
+    resultType === "as-number"
+  ) {
+    result = +input1 + +input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
+}
 
-console.log(person.name, person.age);
+const combinedAges = combine(30, 26, "as-number");
+console.log(combinedAges);
+
+const combinedStringAges = combine("30", "26", "as-number");
+console.log(combinedStringAges);
+
+const combinedNames = combine("Max", "Anna", "as-text");
+console.log(combinedNames);
