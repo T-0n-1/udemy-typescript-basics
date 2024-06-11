@@ -1,7 +1,7 @@
 function combine(
   input1: number | string,
   input2: number | string,
-  resultType: string
+  resultType: "as-number" | "as-text"
 ) {
   let result;
   if (
