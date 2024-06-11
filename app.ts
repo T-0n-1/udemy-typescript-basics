@@ -1,8 +1,7 @@
-function combine(
-  input1: number | string,
-  input2: number | string,
-  resultType: "as-number" | "as-text"
-) {
+type NmbStr = number | string;
+type ResultDescriptor = "as-number" | "as-text";
+
+function combine(input1: NmbStr, input2: NmbStr, resultType: ResultDescriptor) {
   let result;
   if (
     (typeof input1 === "number" && typeof input2 === "number") ||
