@@ -1,24 +1,9 @@
-type NmbStr = number | string;
-type ResultDescriptor = "as-number" | "as-text";
-
-function combine(input1: NmbStr, input2: NmbStr, resultType: ResultDescriptor) {
-  let result;
-  if (
-    (typeof input1 === "number" && typeof input2 === "number") ||
-    resultType === "as-number"
-  ) {
-    result = +input1 + +input2;
-  } else {
-    result = input1.toString() + input2.toString();
-  }
-  return result;
+function add(number1: number, number2: number) {
+  return number1 + number2;
 }
 
-const combinedAges = combine(30, 26, "as-number");
-console.log(combinedAges);
+function printResult(result: number): void {
+  console.log("Result: " + result);
+}
 
-const combinedStringAges = combine("30", "26", "as-number");
-console.log(combinedStringAges);
-
-const combinedNames = combine("Max", "Anna", "as-text");
-console.log(combinedNames);
+printResult(add(57, 12));
